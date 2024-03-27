@@ -1,3 +1,122 @@
-.red{
-    color: red;
+:root{
+    --padding-from-sides: 24px;
+    --primary-color: #c5e2ff;
+    --secondary-color: #a9c9e9;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 75px 1fr 75px;
+
+    background-color: var(--primary-color);
+}
+
+header{
+    background-color: var(--secondary-color);
+}
+
+footer{
+    text-align: center;
+    background-color: var(--secondary-color);
+
+    display: grid;
+    align-items: center;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+
+    height: 100%;
+
+    text-align: center;
+    padding: 0 var(--padding-from-sides);
+}
+
+nav > div{
+    text-align: start;
+    align-self: center;
+
+    font-weight: bold;
+    font-size: 24px
+}
+
+nav > button{
+    background-color: var(--secondary-color);
+    border: 0;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+nav > button:hover{
+    background-color: var(--primary-color);
+}
+
+h1, h2{
+    text-align: center;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+}
+
+#content > *{
+    flex: 1;
+    min-height: 300px;
+    height: 100%;
+}
+
+#content > section:first-child{
+    background-image: url('./images/white-bg.jpg');
+    background-color: var(--primary-color);
+    background-blend-mode: multiply;
+    background-size: 50% 100%; 
+}
+
+#content > section:nth-child(even){
+    background-color: var(--secondary-color);
+}
+
+section{
+    display: grid;
+    align-content: center;
+    padding: 0 var(--padding-from-sides);
+    text-align: center;
+}
+
+section.product{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    column-gap: 12px;
+}
+
+section.product > img{
+    max-height: 275px;
+    max-width: 275px;
+    grid-row: 1 / -1;
+    align-self: center;
+    border-radius: 5px;
+}
+
+section.product > h2{
+    align-self: end;
+}
+
+section.product > p{
+    align-self: start;
+}
+
+#content > section:nth-child(even) > img{
+    border: 3px solid var(--primary-color);
+}
+
+#content > section:nth-child(odd) > img{
+    border: 3px solid var(--secondary-color);
 }
